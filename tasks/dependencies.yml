@@ -1,0 +1,12 @@
+---
+
+- name: installing docker-compose
+  community.general.pacman:
+    name:
+      - docker-compose
+    state: present
+
+- name: downloading docker-pi=hole
+  git:
+    repo: https://github.com/pi-hole/docker-pi-hole.git
+    dest: "/home/{{ user }}/git/docker-pi-hole"
